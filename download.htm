@@ -1,0 +1,870 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Memahami Perhitungan Kisaran Nirkabel-Berita-FMUSER Pemasok One-Stop Siaran FM / TV</title>
+<meta name="Keywords" content="fm transmitter, fm radio transmitter, fm broadcast, tv transmitter, tv modulator, fm antenna, fm radio station, tv studio, tv station" >
+<meta name="Description" content="	by Chris Downey 			Electronic Design 				 	 	One of the key calculations in any wireless design is range, the maximum distance between transmitter and receiver for normal operation. This article identifies the factors involved in calculating range and shows how to estimate range to ensure a reliable communications link. 	 	Why Actual Range May Not Equal Stated Range 	 	Have you ever purchased a wireless radio for an embedded project and discovered that you didn’t achieve the radio frequency (RF) range stated in the datasheet? Why is that? It’s probably due to differences between how the supplier measured the range and how you are using the radio. 	 	 	Suppliers usually determine range by deriving it empirically from r" >
+<link rel="stylesheet" href="https://www.fmuser.net/Templates/jzcbff/css/style.css" media="screen" />
+</head>
+<body>
+<script type="text/javascript" src="https://www.fmuser.net/Templates/jzcbff/js/jquery-1.7.2.js"></script>
+<script type="text/javascript" language="javascript">
+var url = location.href;
+if(url.indexOf("&")>-1){
+	url = url.split('&')[0];
+	window.history.pushState({}, 0, url);
+}
+//alert(url);
+$(function(){
+ 	$(".menu ul>li:has(ul)").hover(function(){ 
+   		$(this).children('a').addClass('on').end().find('ul').fadeIn(300);
+  	},function(){
+   		$(this).children('a').removeClass('on').end().find('ul').fadeOut(300);
+  	});
+});
+</script>
+<div class="wraper">
+	<div class="logo"><a href="/"><img src="https://www.fmuser.net/Templates/jzcbff/images/fmuser.png" alt="FMUSER Pemasok Satu Pintu Siaran FM / TV" /></a> </div>
+	<div class="topr"><script type="text/javascript" src="https://www.fmuser.net/Templates/jzcbff/js/SetHomePage.js"></script>
+		<a href="javascript:AddFavorite(location.href,'FMUSER International Group Limited')">Tambahkan Favorit</a>
+    	<a href="javascript:SetHome()" >set Homepage</a>
+	</div>
+	<div class="search">
+		<form action="/search.asp" method="get">
+			<input class="keys" value="Enter a keyword..." name="keys" onfocus="this.value='';this.focus()">
+			<input class="soimg" name="Submit" id="button" type="Submit" value="Search">
+		</form>
+	</div>
+	<div class="cl"></div>
+	<div class="menu">
+		<ul>
+    		<li><a href="/">Beranda</a></li>
+   			<li><a href="/about/?2.html">Tentang Kami</a></li>
+   			<li><a href="/list/?3_1.html">Produk</a>
+        	<ul class="w ov font12 cen">
+				<a href="/list/?116_1.html">FM Transmitter</a>
+				<a href="/list/?117_1.html">Transmitter TV</a>
+				<a href="/list/?118_1.html">FM Antenna</a>
+				<a href="/list/?119_1.html">Antena TV</a>
+				<a href="/list/?120_1.html">antena Aksesori</a>
+				<a href="/list/?140_1.html">RF Transistor</a>
+				<a href="/list/?139_1.html">Sumber Daya listrik</a>
+				<a href="/list/?121_1.html">Peralatan Audio</a>
+				<a href="/list/?142_1.html">DTV Front End Peralatan</a>
+				<a href="/list/?122_1.html">Link Sistem</a>
+				<a href="/list/?138_1.html">Radio FM</a>
+				<a href="/list/?123_1.html">Pengukur daya</a>
+				<a href="/list/?141_1.html">Produk-produk lain</a>
+				<a href="/list/?152_1.html">Khusus untuk Coronavirus</a>
+        	</ul></li>
+   			<li><a href="/list/?4_1.html" class="cur">Berita</a>
+        	<ul class="w ov font12 cen">
+				<a href="/list/?6_1.html">FAQs</a>
+				<a href="/list/?7_1.html">Proyek</a>
+				<a href="/list/?151_1.html">IPTV</a>
+				<a href="/list/?150_1.html">produk Video</a>
+        	</ul></li>
+   			<li><a href="/list/?5_1.html">Download</a></li>
+   			<li><a href="/about/?144.html">Dukungan</a></li>
+   			<li><a href="/Feedback/">Review</a></li>
+   			<li><a href="/about/?8.html">Hubungi Kami</a></li>
+   			<li><a href="/list/?145_1.html">Jasa</a>
+        	<ul class="w ov font12 cen">
+				<a href="/list/?146_1.html">FM Radio Station</a>
+				<a href="/list/?147_1.html">analog TV</a>
+				<a href="/list/?148_1.html">DTV</a>
+        	</ul></li>
+		</ul>
+	</div>
+</div>
+<div class="cl"></div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148144653-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-148144653-2');
+</script>
+
+<div class="content">
+	<div class="where mtop">Posisi:<a href="/">Beranda</a>    >>  <a href="/list/?4_1.html">Berita</a></div>
+	<div class="cleft">
+		<h3>produk Kategori</h3>
+		<div class="sorts">
+			<dl>
+				<dt><a href="javascript:void(0);">FM Transmitter</a></dt>
+				<dd style="display:">
+					<a title="0-50w" href="/list/?124_1.html">0-50w</a>
+					<a title="50w-1000w" href="/list/?125_1.html">50w-1000w</a>
+					<a title="2kw-10kw" href="/list/?126_1.html">2kw-10kw</a>
+					<a title="10kw +" href="/list/?127_1.html">10kw +</a>
+				</dd>
+			
+				<dt><a href="javascript:void(0);">Transmitter TV</a></dt>
+				<dd style="display:">
+					<a title="0-50w" href="/list/?128_1.html">0-50w</a>
+					<a title="50-1kw" href="/list/?129_1.html">50-1kw</a>
+					<a title="2kw-10kw" href="/list/?130_1.html">2kw-10kw</a>
+				</dd>
+			
+				<dt><a href="/list/?118_1.html">FM Antenna</a></dt>
+				<dd style="display:">
+				</dd>
+			
+				<dt><a href="/list/?119_1.html">Antena TV</a></dt>
+				<dd style="display:">
+				</dd>
+			
+				<dt><a href="javascript:void(0);">antena Aksesori</a></dt>
+				<dd style="display:">
+					<a title="Kabel" href="/list/?131_1.html">Kabel</a>
+					<a title="konektor" href="/list/?132_1.html">konektor</a>
+					<a title="kekuatan Splitter" href="/list/?133_1.html">kekuatan Splitter</a>
+					<a title="Dummy load" href="/list/?134_1.html">Dummy load</a>
+				</dd>
+			
+				<dt><a href="/list/?140_1.html">RF Transistor</a></dt>
+				<dd style="display:">
+				</dd>
+			
+				<dt><a href="/list/?139_1.html">Sumber Daya listrik</a></dt>
+				<dd style="display:">
+				</dd>
+			
+				<dt><a href="/list/?121_1.html">Peralatan Audio</a></dt>
+				<dd style="display:">
+				</dd>
+			
+				<dt><a href="/list/?142_1.html">DTV Front End Peralatan</a></dt>
+				<dd style="display:">
+				</dd>
+			
+				<dt><a href="javascript:void(0);">Link Sistem</a></dt>
+				<dd style="display:">
+					<a title="sistem STL" href="/list/?135_1.html">sistem STL</a>
+					<a title="Link sistem microwave" href="/list/?136_1.html">Link sistem microwave</a>
+				</dd>
+			
+				<dt><a href="/list/?138_1.html">Radio FM</a></dt>
+				<dd style="display:">
+				</dd>
+			
+				<dt><a href="/list/?123_1.html">Pengukur daya</a></dt>
+				<dd style="display:">
+				</dd>
+			
+				<dt><a href="/list/?141_1.html">Produk-produk lain</a></dt>
+				<dd style="display:">
+				</dd>
+			
+				<dt><a href="/list/?152_1.html">Khusus untuk Coronavirus</a></dt>
+				<dd style="display:">
+				</dd>
+			
+		</div>
+        <script type="text/javascript">
+			$(document).ready(function(){
+				//$(".sorts dl dd").hide();
+					$(".sorts dl dt a").click(function(){
+						$(".sorts dl dd").hide();
+						$(this).parent().next().show();
+					});
+			})                    
+                                
+                    
+        </script>
+		<div class="cl"></div>
+                 <script src="https://www.fmuser.net/inc/AspCms_AdvJs.asp?id=14" language="JavaScript"></script>
+		<h3>produk Tags</h3>
+		<ul class="tags">
+			<a href="/taglist.asp?tag=FM Antenna">FM Antenna</a>
+			<a href="/taglist.asp?tag=high power">kekuatan tinggi</a>
+			<a href="/taglist.asp?tag=low power">daya rendah</a>
+			<a href="/taglist.asp?tag=professional TX">profesional TX</a>
+			<a href="/taglist.asp?tag=FM Receiver">FM Receiver</a>
+			<a href="/taglist.asp?tag=15w">15w</a>
+			<a href="/taglist.asp?tag=15w">15w</a>
+			<a href="/taglist.asp?tag=30w">30w</a>
+			<a href="/taglist.asp?tag=RF Transistor">RF Transistor</a>
+			<a href="/taglist.asp?tag=Analog TV TX">Analog TV TX</a>
+			<a href="/taglist.asp?tag=Power Supply">Sumber Daya listrik</a>
+			<a href="/taglist.asp?tag=1.5w">1.5w</a>
+			<a href="/taglist.asp?tag=Dipole antenna">antena dipol</a>
+			<a href="/taglist.asp?tag=PCB Kit">PCB Kit</a>
+			<a href="/taglist.asp?tag=TV Transmitter">Transmitter TV</a>
+			<a href="/taglist.asp?tag=Modulator">Alat modulasi</a>
+			<a href="/taglist.asp?tag=Encoder">encoder</a>
+			<a href="/taglist.asp?tag=100w">100w</a>
+			<a href="/taglist.asp?tag=1w">1w</a>
+			<a href="/taglist.asp?tag=1kw">1kw</a>
+			<a href="/taglist.asp?tag=TV Antenna">Antena TV</a>
+			<a href="/taglist.asp?tag=50w">50w</a>
+			<a href="/taglist.asp?tag=5w">5w</a>
+			<a href="/taglist.asp?tag=25w">25w</a>
+			<a href="/taglist.asp?tag=300w">300w</a>
+			<a href="/taglist.asp?tag=0.1w">0.1w</a>
+			<a href="/taglist.asp?tag=0.2w">0.2w</a>
+			<a href="/taglist.asp?tag=0.5w">0.5w</a>
+			<a href="/taglist.asp?tag=150w">150w</a>
+			<a href="/taglist.asp?tag=80w">80w</a>
+			<a href="/taglist.asp?tag=7w">7w</a>
+			<a href="/taglist.asp?tag=500w">500w</a>
+			<a href="/taglist.asp?tag=Demodulator">demodulator</a>
+			<a href="/taglist.asp?tag=600w">600w</a>
+			<a href="/taglist.asp?tag=Projects">Proyek</a>
+			<a href="/taglist.asp?tag=350w">350w</a>
+			<a href="/taglist.asp?tag=2kw">2kw</a>
+			<a href="/taglist.asp?tag=3kw">3kw</a>
+			<a href="/taglist.asp?tag=5kw">5kw</a>
+			<a href="/taglist.asp?tag=10kw">10kw</a>
+			<a href="/taglist.asp?tag=FM amplifier">amplifier FM</a>
+			<a href="/taglist.asp?tag=2w">2w</a>
+			<a href="/taglist.asp?tag=200w">200w</a>
+			<a href="/taglist.asp?tag=50mw">50mw</a>
+			<a href="/taglist.asp?tag=700w">700w</a>
+			<a href="/taglist.asp?tag=Power Meter">Pengukur daya</a>
+			<a href="/taglist.asp?tag=PC control">kontrol PC</a>
+			<a href="/taglist.asp?tag=8w">8w</a>
+			<a href="/taglist.asp?tag=1000w">1000w</a>
+			<a href="/taglist.asp?tag=2000w">2000w</a>
+			<a href="/taglist.asp?tag=RF Connector">RF Connector</a>
+			<a href="/taglist.asp?tag=Digital TV TX">Digital TV TX</a>
+			<a href="/taglist.asp?tag=power splitter">kekuasaan splitter</a>
+			<a href="/taglist.asp?tag=car antenna">antena mobil</a>
+			<a href="/taglist.asp?tag=dummy load">dummy load</a>
+			<a href="/taglist.asp?tag=USB Transmitter">USB Transmitter</a>
+			<a href="/taglist.asp?tag=RF Cable">RF kabel</a>
+			<a href="/taglist.asp?tag=Other products">Produk-produk lain</a>
+			<a href="/taglist.asp?tag=pcb kits">kit PCB</a>
+			<a href="/taglist.asp?tag=Audio Cable">kabel Audio</a>
+			<a href="/taglist.asp?tag=Audio equipment">perlengkapan audio</a>
+			<a href="/taglist.asp?tag=Studio Link">Studio Tautan</a>
+			<a href="/taglist.asp?tag=usb fm transmitter">usb fm transmitter</a>
+			<a href="/taglist.asp?tag=Transmitter">Pemancar</a>
+			<a href="/taglist.asp?tag=RDS transmitter">RDS transmitter</a>
+			<a href="/taglist.asp?tag=Radio station">Stasiun Radio</a>
+			<a href="/taglist.asp?tag=IRD">IRD</a>
+			<a href="/taglist.asp?tag=Multiplexer">multiplexer</a>
+			<a href="/taglist.asp?tag=MUX-Scrambler">MUX-Scrambler</a>
+			<a href="/taglist.asp?tag=STL">STL</a>
+			<a href="/taglist.asp?tag=FM Transmitter">FM Transmitter</a>
+			<a href="/taglist.asp?tag=TV">TV</a>
+			<a href="/taglist.asp?tag=audio mixer">audio mixer</a>
+			<a href="/taglist.asp?tag=mini transmitter">mini pemancar</a>
+			<a href="/taglist.asp?tag=professional">profesional</a>
+			<a href="/taglist.asp?tag=1kw fm transmitter">1kw fm transmitter</a>
+			<a href="/taglist.asp?tag=SET TOP BOX">SET TOP BOX</a>
+		</ul>
+		<div class="cl"></div>
+		<h3>Situs Fmuser</h3>
+		<ul class="sites">
+			<li><a target="_blank" href="http://es.fmuser.net">es.fmuser.net</a></li>
+			<li><a target="_blank" href="http://it.fmuser.net">it.fmuser.net</a></li>
+			<li><a target="_blank" href="http://fr.fmuser.net">fr.fmuser.net</a></li>
+			<li><a target="_blank" href="http://de.fmuser.net">de.fmuser.net</a></li>
+			<li><a target="_blank" href="http://af.fmuser.net">af.fmuser.net</a> -&gt; Afrikaans</li>
+			<li><a target="_blank" href="http://sq.fmuser.net">sq.fmuser.net</a> -&gt; Albania</li>
+			<li><a target="_blank" href="http://ar.fmuser.net">ar.fmuser.net</a> -&gt; Arab</li>
+			<li><a target="_blank" href="http://hy.fmuser.net">hy.fmuser.net</a> -&gt; Armenian</li>
+			<li><a target="_blank" href="http://az.fmuser.net">az.fmuser.net</a> -&gt; Azerbaijani</li>
+			<li><a target="_blank" href="http://eu.fmuser.net">eu.fmuser.net</a> -&gt; Basque</li>
+			<li><a target="_blank" href="http://be.fmuser.net">be.fmuser.net</a> -&gt; Belarusia</li>
+			<li><a target="_blank" href="http://bg.fmuser.net">bg.fmuser.net</a> -&gt; Bulgaria</li>
+			<li><a target="_blank" href="http://ca.fmuser.net">ca.fmuser.net</a> -&gt; Catalan</li>
+			<li><a target="_blank" href="http://zh-CN.fmuser.net">zh-CN.fmuser.net</a> -&gt; Cina (Modern)</li>
+			<li><a target="_blank" href="http://zh-TW.fmuser.net">zh-TW.fmuser.net</a> -&gt; Chinese (Traditional)</li>
+			<li><a target="_blank" href="http://hr.fmuser.net">hr.fmuser.net</a> -&gt; Kroasia</li>
+			<li><a target="_blank" href="http://cs.fmuser.net">cs.fmuser.net</a> -&gt; Republik</li>
+			<li><a target="_blank" href="http://da.fmuser.net">da.fmuser.net</a> -&gt; Denmark</li>
+			<li><a target="_blank" href="http://nl.fmuser.net">nl.fmuser.net</a> -&gt; Belanda</li>
+			<li><a target="_blank" href="http://et.fmuser.net">et.fmuser.net</a> -&gt; Estonia</li>
+			<li><a target="_blank" href="http://tl.fmuser.net">tl.fmuser.net</a> -&gt; Filipina</li>
+			<li><a target="_blank" href="http://fi.fmuser.net">fi.fmuser.net</a> -&gt; Finlandia</li>
+			<li><a target="_blank" href="http://fr.fmuser.net">fr.fmuser.net</a> -&gt; Prancis</li>
+			<li><a target="_blank" href="http://gl.fmuser.net">gl.fmuser.net</a> -&gt; Galician</li>
+			<li><a target="_blank" href="http://ka.fmuser.net">ka.fmuser.net</a> -&gt; Georgia</li>
+			<li><a target="_blank" href="http://de.fmuser.net">de.fmuser.net</a> -&gt; Jerman</li>
+			<li><a target="_blank" href="http://el.fmuser.net">el.fmuser.net</a> -&gt; Yunani</li>
+			<li><a target="_blank" href="http://ht.fmuser.net">ht.fmuser.net</a> -&gt; Creole Haiti</li>
+			<li><a target="_blank" href="http://iw.fmuser.net">iw.fmuser.net</a> -&gt; Hebrew</li>
+			<li><a target="_blank" href="http://hi.fmuser.net">hi.fmuser.net</a> -&gt; Hindi</li>
+			<li><a target="_blank" href="http://hu.fmuser.net">hu.fmuser.net</a> -&gt; Hungaria</li>
+			<li><a target="_blank" href="http://is.fmuser.net">is.fmuser.net</a> -&gt; Islandia</li>
+			<li><a target="_blank" href="http://id.fmuser.net">id.fmuser.net</a> -&gt; Indonesia</li>
+			<li><a target="_blank" href="http://ga.fmuser.net">ga.fmuser.net</a> -&gt; Irlandia</li>
+			<li><a target="_blank" href="http://it.fmuser.net">it.fmuser.net</a> -&gt; Italia</li>
+			<li><a target="_blank" href="http://ja.fmuser.net">ja.fmuser.net</a> -&gt; Jepang</li>
+			<li><a target="_blank" href="http://ko.fmuser.net">ko.fmuser.net</a> -&gt; Korean</li>
+			<li><a target="_blank" href="http://lv.fmuser.net">lv.fmuser.net</a> -&gt; Latvia</li>
+			<li><a target="_blank" href="http://lt.fmuser.net">lt.fmuser.net</a> -&gt; Lithuania</li>
+			<li><a target="_blank" href="http://mk.fmuser.net">mk.fmuser.net</a> -&gt; Macedonia</li>
+			<li><a target="_blank" href="http://ms.fmuser.net">ms.fmuser.net</a> -&gt; Malay</li>
+			<li><a target="_blank" href="http://mt.fmuser.net">mt.fmuser.net</a> -&gt; Malta</li>
+			<li><a target="_blank" href="http://no.fmuser.net">no.fmuser.net</a> -&gt; Norwegia</li>
+			<li><a target="_blank" href="http://fa.fmuser.net">fa.fmuser.net</a> -&gt; Persia</li>
+			<li><a target="_blank" href="http://pl.fmuser.net">pl.fmuser.net</a> -&gt; Polandia</li>
+			<li><a target="_blank" href="http://pt.fmuser.net">pt.fmuser.net</a> -&gt; Portugis</li>
+			<li><a target="_blank" href="http://ro.fmuser.net">ro.fmuser.net</a> -&gt; Romania</li>
+			<li><a target="_blank" href="http://ru.fmuser.net">ru.fmuser.net</a> -&gt; Rusia</li>
+			<li><a target="_blank" href="http://sr.fmuser.net">sr.fmuser.net</a> -&gt; Serbia</li>
+			<li><a target="_blank" href="http://sk.fmuser.net">sk.fmuser.net</a> -&gt; Slowakia</li>
+			<li><a target="_blank" href="http://sl.fmuser.net">sl.fmuser.net</a> -&gt; Slovenia</li>
+			<li><a target="_blank" href="http://es.fmuser.net">es.fmuser.net</a> -&gt; Spanyol</li>
+			<li><a target="_blank" href="http://sw.fmuser.net">sw.fmuser.net</a> -&gt; Swahili</li>
+			<li><a target="_blank" href="http://sv.fmuser.net">sv.fmuser.net</a> -&gt; Swedia</li>
+			<li><a target="_blank" href="http://th.fmuser.net">th.fmuser.net</a> -&gt; Thai</li>
+			<li><a target="_blank" href="http://tr.fmuser.net">tr.fmuser.net</a> -&gt; Turki</li>
+			<li><a target="_blank" href="http://uk.fmuser.net">uk.fmuser.net</a> -&gt; Ukraina</li>
+			<li><a target="_blank" href="http://ur.fmuser.net">ur.fmuser.net</a> -&gt; Urdu</li>
+			<li><a target="_blank" href="http://vi.fmuser.net">vi.fmuser.net</a> -&gt; Vietnam</li>
+			<li><a target="_blank" href="http://cy.fmuser.net">cy.fmuser.net</a> -&gt; Welsh</li>
+			<li><a target="_blank" href="http://yi.fmuser.net">yi.fmuser.net</a> -&gt; Yiddish</li>
+		</ul>
+	</div>
+
+	<div class="cright">
+		<div class="acon">
+			<h1 style="font-family:Arial, Helvetica, sans-serif;font-size:24px;line-height:25px;">Memahami Wireless Rentang Perhitungan</h1>
+			<div class="heng">Date:2016/1/20 16:42:22 Hits:<span><script src="https://www.fmuser.net/inc/AspCms_Visits.asp?id=1821"></script></span></div>
+			<div align="right">
+	<span style="font-family:Arial;font-size:16px;">oleh Chris Downey </span><br />
+	<p class="gt-block">
+		<span style="font-family:Arial;font-size:16px;">Thiết kế điện tử</span> 
+	</p>
+	<p>
+		<span style="font-family:Arial;font-size:16px;"><br />
+</span> 
+	</p>
+<span style="font-family:Arial;font-size:16px;"></span> 
+</div>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Salah satu perhitungan kunci dalam setiap desain nirkabel jarak, jarak maksimum antara pemancar dan penerima untuk operasi normal. Artikel ini mengidentifikasi faktor-faktor yang terlibat dalam menghitung jangkauan dan menunjukkan bagaimana memperkirakan kisaran untuk memastikan link komunikasi yang handal.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"><span style="font-size:18px;"><strong><u>Mengapa Rentang Aktual Mungkin Tidak Sama Lain Rentang</u></strong></span></span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Apakah Anda pernah membeli radio nirkabel untuk proyek tertanam dan menemukan bahwa Anda tidak mencapai frekuensi radio (RF) berkisar dinyatakan dalam datasheet? Mengapa demikian? Ini mungkin karena perbedaan antara bagaimana pemasok diukur jangkauan dan bagaimana Anda menggunakan radio.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p>
+	<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Pemasok biasanya menentukan kisaran dengan yang berasal secara empiris dari tes dunia nyata atau dengan menggunakan perhitungan. Entah pendekatan baik-baik saja selama Anda memperhitungkan semua variabel. Sebuah solusi empiris, bagaimanapun, dapat mengungkapkan situasi dunia nyata bahwa perhitungan tidak mengatasi.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Sebelum kita membandingkan pendekatan, mari kita mendefinisikan beberapa istilah untuk memahami nomor produsen atau variabel yang relevan untuk berbagai.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"><span style="font-size:18px;"><strong><u>Daya Dan Perhitungan dBm</u></strong></span></span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">daya RF yang paling sering diungkapkan dan diukur dalam desibel dengan referensi milliwatt, atau dBm. Sebuah desibel adalah unit logaritmik yang rasio kekuatan sistem untuk beberapa referensi. Nilai decibel 0 setara dengan rasio 1. Decibel-milliwatt adalah kekuatan output dalam desibel direferensikan ke 1 mW.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Sejak dBm didasarkan pada skala logaritmik, itu adalah pengukuran kekuasaan mutlak. Untuk setiap kenaikan 3 dBm ada kira-kira dua kali kekuatan output, dan setiap kenaikan 10 dBm merupakan peningkatan sepuluh kali lipat dalam kekuasaan. 10 dBm (10 mW) adalah 10 kali lebih kuat dari 0 dBm (1 mW), dan 20 dBm (100 mW) adalah 10 kali lebih kuat dari 10 dBm.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Anda dapat mengkonversi antara mW dan dBm menggunakan rumus berikut:</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"> P (dBm) = 10 • log10 (P (mW))</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"> P (mW) = 10 (P (dBm) / 10)</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"> Misalnya, kekuatan 2.5 mW di dBm adalah:</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"> dBm = 10log2.5 = 3.979</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"> atau sekitar 4 dBm. Nilai dBm dari 7 dBm di mW kekuasaan adalah:</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">P = 107 / 10 = 100.7 = 5 mW</span> 
+</p>
+<p>
+	<span style="font-family:Arial;font-size:16px;"><br />
+</span> 
+</p>
+<p>
+	<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"><span style="font-size:18px;"><strong><u>path Loss</u></strong></span></span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">path loss adalah pengurangan densitas daya yang terjadi sebagai gelombang radio merambat lebih jauh. Faktor utama dalam path loss adalah penurunan kekuatan sinyal lebih jarak gelombang radio sendiri. gelombang radio mengikuti hukum kuadrat terbalik untuk rapat daya: kepadatan daya sebanding dengan kuadrat terbalik dari jarak. Setiap kali Anda dua kali lipat jarak, Anda hanya menerima seperempat kekuatan. Ini berarti bahwa setiap kenaikan 6-dBm daya output menggandakan kemungkinan jarak yang dapat dicapai.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Selain kekuatan pemancar, faktor lain yang mempengaruhi rentang sensitivitas penerima. Hal ini biasanya dinyatakan dalam -dBm. Karena kedua output daya dan sensitivitas penerima dinyatakan dalam dBm, Anda dapat menggunakan tambahan sederhana dan pengurangan untuk menghitung path loss maksimum yang sistem dapat dikenakan:</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">path kerugian maksimum = daya pancar - sensitivitas penerima + keuntungan - kerugian</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Keuntungan mencakup keuntungan yang dihasilkan dari transmisi directional dan / atau menerima antena. Keuntungan antena biasanya dinyatakan dalam dBi dirujuk ke antena isotropik. Kerugian mencakup filter atau atenuasi kabel atau kondisi lingkungan yang dikenal. Hubungan ini juga dapat dinyatakan sebagai link budget, yang merupakan akuntansi semua keuntungan dan kerugian dari sistem untuk mengukur kekuatan sinyal pada penerima:</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">daya yang diterima = daya pancar + keuntungan - kerugian</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Tujuannya adalah untuk membuat daya yang diterima lebih besar dari sensitivitas receiver</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Di ruang bebas (kondisi ideal), hukum kuadrat terbalik adalah satu-satunya faktor yang mempengaruhi jangkauan. Dalam dunia nyata, bagaimanapun, rentang juga dapat terdegradasi oleh faktor lain:</span>
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span>
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">• Hambatan seperti dinding, pohon, dan bukit-bukit dapat menyebabkan kehilangan sinyal yang signifikan.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">• Air di udara (kelembaban) dapat menyerap energi RF.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">• benda logam dapat mencerminkan gelombang radio, menciptakan versi baru dari sinyal. Ini beberapa gelombang mencapai receiver pada waktu yang berbeda dan destruktif (dan kadang-kadang konstruktif) mengganggu diri mereka sendiri. Ini disebut multipath.</span> 
+</p>
+<p>
+	<br />
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"><span style="font-size:18px;"><strong><u>Fade Margin</u></strong></span></span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Ada banyak rumus untuk mengukur hambatan tersebut. Ketika menerbitkan nomor jangkauan, bagaimanapun, produsen sering mengabaikan hambatan dan negara hanya garis-of-sight (LOS) atau yang ideal nomor rentang jalan. Dalam keadilan ke produsen, tidak mungkin untuk mengetahui semua lingkungan di mana radio dapat digunakan, sehingga tidak mungkin untuk menghitung kisaran tertentu yang mungkin dicapai. Produsen kadang-kadang akan mencakup margin memudar ke dalam perhitungan mereka untuk menyediakan kondisi lingkungan tersebut. Dengan demikian, persamaan untuk perhitungan jarak menjadi:</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">path loss maksimum = daya pancar - sensitivitas penerima + keuntungan - kerugian - margin memudar</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">fade margin adalah uang saku desainer sistem termasuk untuk memperhitungkan variabel yang tidak diketahui. Semakin tinggi margin memudar, semakin baik kualitas link keseluruhan akan. Dengan margin memudar diatur ke nol, link budget masih berlaku, hanya dalam kondisi LOS, yang sangat tidak praktis untuk sebagian besar desain. Jumlah margin memudar untuk dimasukkan dalam perhitungan tergantung pada lingkungan di mana sistem ini diharapkan akan dikerahkan. Sebuah margin memudar dari 12 dBm baik, tetapi sejumlah yang lebih baik akan 20 untuk 30 dBm.<span id="transmark"></span></span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Sebagai contoh, asumsikan daya pancar 20 dBm, sensitivitas penerima -100 dBm, menerima keuntungan antena 6 dBi, mengirimkan keuntungan antena 6 dBi, dan margin memudar dari 12 dB. hilangnya kabel diabaikan:</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">path loss maksimum = daya pancar - sensitivitas penerima + keuntungan - kerugian - margin memudar</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">V - path loss maksimum = 20 - (-100) + 12 - 12 = 120 dB</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Setelah path loss maksimum telah ditemukan, Anda dapat menemukan berbagai dari rumus:</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Jarak (km) = 10 (path loss maksimum - 32.44 - 20log (f)) / 20</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">dimana f = frekuensi dalam MHz. Sebagai contoh, jika path loss maksimum adalah 120 dB pada frekuensi 2.45 GHz atau 2450 MHz, rentang akan:</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Jarak (km) = 10 (120 - 32.44 - 67.78) / 20 = 9.735 km</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<span style="font-family:Arial;font-size:16px;">Gambar 1 menunjukkan hubungan antara path loss maksimum dan jangkauan pada frekuensi 2.45 GHz.<br />
+</span> 
+<p>
+	<br />
+</p>
+<p align="center">
+	<img src="https://www.fmuser.net/Keditor/attached/image/20160120/20160120163815411541.jpg" alt="" /> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">1. Kurva menunjukkan hubungan antara anggaran link atau path loss maksimum dalam dBm dan diperkirakan rentang kilometer.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"><strong><span style="font-size:18px;"><u>Menafsirkan Hasil empiris</u></span></strong></span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Sementara metode empiris yang sangat berguna dalam menentukan kisaran, sering sulit untuk mencapai yang ideal LOS untuk pengukuran dunia nyata dan sulit untuk memahami berapa banyak fade margin untuk membangun ke dalam sistem. Hasil diukur dapat membantu mengidentifikasi masalah luar propagasi RF yang dapat mempengaruhi berbagai sistem, seperti propagasi multipath, gangguan, dan penyerapan RF. Tapi tidak semua tes dunia nyata adalah sama, sehingga pengukuran dunia nyata harus digunakan terutama untuk meningkatkan angka link budget dihitung di atas.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Faktor-faktor yang dapat mempengaruhi rentang dicapai dalam uji empiris termasuk gain antena, tinggi antena, dan gangguan. gain antena adalah sumber utama keuntungan dalam sistem. Seringkali produsen akan menyatakan radio mereka untuk bekerja dengan berbagai jenis antena dari high gain Yagi dan antena patch untuk antena omnidirectional lebih moderat-gain. Hal ini penting untuk memastikan tes dilakukan dengan jenis yang sama dari antena dengan yang Anda sekarang menggunakan radio. Mengubah dari antena 6-dBm untuk antena 3-dBm pada kedua mengirim dan menerima sisi akan menyebabkan perbedaan 6-dBm dalam link budget dan mengurangi rentang setengah.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"><span style="font-size:18px;"><strong><u>Antena Tinggi Dan Zona Fresnel</u></strong></span></span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">antena tinggi merupakan perhatian lain untuk pengukuran empiris. Meningkatkan ketinggian antena melakukan dua hal utama. Pertama, dapat membantu Anda atas setiap penghalang mungkin seperti mobil, orang, pohon, dan bangunan. Kedua, dapat membantu mendapatkan benar jalur sinyal RF LOS Anda setidaknya 60% cukai di zona Fresnel.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Zona Fresnel adalah volume ellipsoid antara pemancar dan penerima yang wilayah didefinisikan oleh panjang gelombang sinyal. Ini adalah daerah yang dihitung yang berusaha untuk menjelaskan penyumbatan atau difraksi gelombang radio. Ini digunakan untuk menghitung clearance yang tepat sinyal harus memiliki sekitar hambatan untuk mencapai kekuatan sinyal yang optimal. Aturan umum praktis adalah untuk memiliki jalur LOS jelas di atas rintangan yang tidak lebih dari 60% dari ketinggian antena.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<span style="font-family:Arial;font-size:16px;">Kelengkungan bumi juga dapat berdampak LOS untuk link nirkabel jarak jauh. meja memberikan beberapa contoh dampak, dimana tinggi bumi pada titik tengah dari jalur link tidak memperhitungkan bukit atau fitur medan lain dan ketinggian antena mencapai sinyal yang setidaknya 60% di zona Fresnel.<br />
+</span> 
+<div align="center">
+	<p>
+		<span style="font-family:Arial;font-size:16px;"></span> 
+	</p>
+	<p>
+		<span style="font-family:Arial;font-size:16px;"></span> <img src="https://www.fmuser.net/Keditor/attached/image/20160120/20160120163985448544.gif" alt="" /> 
+	</p>
+</div>
+<span style="font-family:Arial;font-size:16px;"> Dalam banyak pengaturan praktis, transceiver Anda dapat berfungsi dengan ketinggian antena yang lebih rendah, tetapi merupakan taruhan yang baik bahwa produsen menempatkan antena mereka di ketinggian yang tepat. Untuk aplikasi Anda, Anda harus berusaha untuk memiliki ketinggian antena yang sesuai untuk mencapai kisaran terbaik. Gambar 2 menggambarkan bagaimana jarak jalur, tinggi rintangan, dan tinggi antena terkait dengan zona Fresnel.<br />
+</span> 
+<div align="center">
+	<span style="font-family:Arial;font-size:16px;"> <img src="https://www.fmuser.net/Keditor/attached/image/20160120/20160120163663456345.gif" alt="" /> </span><br />
+<span style="font-family:Arial;font-size:16px;"> </span> 
+</div>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">2. tinggi antena yang diinginkan ditentukan oleh tinggi rintangan dan anjak% margin 60 untuk mengimbangi kondisi zona Fresnel.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Akhirnya, kebisingan dan gangguan dapat memiliki dampak negatif pada kisaran sistem nirkabel. Kebisingan tidak dapat dikontrol tetapi harus menjadi faktor dalam kisaran jika itu adalah masalah. Dalam band industri, ilmiah, dan medis (ISM) di 902 ke 928 MHz (Amerika Utara) dan 2.4 GHz (seluruh dunia), gangguan sering dapat diharapkan, tapi akuntansi untuk sulit. Produsen dapat melakukan tes empiris hanya ketika gangguan tidak hadir. Ini tentu kemungkinan bahwa lingkungan Anda memiliki gangguan lebih besar dari hadir selama pengujian pabrikan.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;"><strong><span style="font-size:18px;"><u>Kesimpulan</u></span></strong></span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<p class="gt-block">
+	<span style="font-family:Arial;font-size:16px;">Dengan begitu banyak variabel dalam suatu sistem, bagaimana Anda bisa tahu apakah kisaran diklaim oleh produsen akan berlaku untuk sistem anda? Sering tidak mungkin untuk mengetahui apakah tes dilakukan secara empiris atau jika nomor kisaran dihitung. Either way, dengan menganalisis daya pancar maksimum dan sensitivitas penerima, Anda dapat menghasilkan dasar untuk membandingkan satu radio ke yang berikutnya. Menggunakan angka-angka ini, bersama dengan margin set memudar dan setiap keuntungan karena antena atau kerugian akibat kabel RF, Anda dapat menghitung link budget maksimal. Kemudian gunakan persamaan jarak di atas untuk menghitung kisaran Anda sendiri. Untuk berbagai perangkat radio, ini harus memberikan dasar yang baik untuk membandingkan dua atau tiga sistem yang memenuhi kebutuhan Anda.</span> 
+</p>
+<p>
+	<br />
+<span style="font-family:Arial;font-size:16px;"></span> 
+</p>
+<span style="font-family:Arial;font-size:16px;"> Untuk memahami jika radio akan bekerja dalam aplikasi Anda, Anda harus berusaha untuk akurat tes dunia nyata yang dapat menjelaskan tinggi antena, multipath, gangguan, dan penghalang. Menunda tes dunia nyata untuk aplikasi Anda dan hanya mengambil nomor pembuat verbatim mungkin meninggalkan Anda bertanya, &quot;Apa jangkauan saya?&quot;<br />
+</span><script src="https://www.fmuser.net/inc/AspCms_VisitsAdd.asp?id=1821"></script>
+			<div class="cl"></div>
+			<div class="prenext">
+				<div class="pre"><strong>prev:</strong><a href="/content/?1820.html">Metamaterial-enabled Antena Bantuan Meningkatkan Sistem Komunikasi Satelit</a></div>
+				<div class="next"><strong>Berikutnya:</strong><a href="/content/?1822.html">Kenya lebih Sekarang Pemilik set-top-box TV</a></div>
+			</div>
+			<div class="cl"></div>
+			<h3> Tinggalkan pesan<a name="inquire" id="inquire"> </a></h3>
+			<style>
+.clistbox 
+{
+	width: 90%;
+	text-align:left;
+	margin-bottom:10px;
+	margin-top:3px;
+}
+.clistbox .line1
+{
+	border-bottom: 1px dashed #999999;
+	text-align:left;
+	padding-left:10px;
+	
+}
+.clistbox .line1 span
+{float:right;
+}
+.clistbox .line2
+{padding:5px;}
+
+</style>
+
+<span id="time" style="display:none"><script src="https://www.fmuser.net/time.asp"></script></span><script>$(function(){$("input[name='intime']").val($("#time").text())})</script>
+<div id="faqbox">
+	<form method="post"  action="/plug/comment/addComment.asp?action=add">
+	<input type="hidden" name="contentID" value="1821" /> 
+    <div class="faqline">
+        <span class="faqtit">Nama</span>
+        <input name="Commentator" type="text" class="ipt" value="" /><font color="#FF0000">*</font><input name="intime" id="intime" type="hidden" value="">
+    </div>
+   <div class="faqline">
+        <span class="faqtit">Email</span>
+        <input name="cEmail" type="text" class="ipt" /><font color="#FF0000">*</font>
+    </div>
+   <div class="faqline">
+        <span class="faqtit">Nomor Hp / Telephone</span>
+        <input name="cphone" type="text" class="ipt" />
+    </div>
+   <div class="faqline">
+        <span class="faqtit">Alamat</span>
+        <input name="caddress" type="text" class="ipt" />
+    </div>
+  	<div class="faqline">
+        <span class="faqtit">Kode</span>
+        <input name="code" type="text" class="ipt" style="width:80px" id="verification" size="6" maxlength="6"/>
+        <img src="https://www.fmuser.net/inc/checkcode.asp" alt="Lihat kode verifikasi? Klik menyegarkan!" onclick="this.src='/inc/checkcode.asp'" />
+    </div>
+    <div class="faqline">
+        <span class="faqtit">Pesan</span>
+        <textarea name="CommentContent" cols="60" rows="5"></textarea>
+    </div>
+   	<div class="faqline">
+        <span class="faqtit"> </span>
+        <input type="submit" class="btn" value="Mengirim pesan"/>
+    </div>
+</form>
+</div>
+
+	<div style="clear:both"></div>
+	<h3 style="margin-bottom:10px">Daftar pesan</h3>
+    <div id="commentlist">Komentar Loading ...</div>
+	<script language="javascript" src="https://www.fmuser.net/plug/comment/comment.asp?id=1821"></script>
+
+
+			<div class="cl"></div>
+		</div>
+	</div>
+	<div class="cl"></div>
+</div>			
+<script type="text/javascript" src="https://www.fmuser.net/inc/AspCms_Statistics.asp"></script><div class="cl"></div>
+<div class="footnav">
+	<a href="/">Beranda</a>|
+	
+	<a href="/about/?2.html">Tentang Kami</a>|
+	
+	<a href="/list/?3_1.html">Produk</a>|
+	
+	<a href="/list/?4_1.html">Berita</a>|
+	
+	<a href="/list/?5_1.html">Download</a>|
+	
+	<a href="/about/?144.html">Dukungan</a>|
+	
+	<a href="/Feedback/">Review</a>|
+	
+	<a href="/about/?8.html">Hubungi Kami</a>|
+	
+	<a href="/list/?145_1.html">Jasa</a>
+</div>
+<div class="cl"></div>
+<div class="foot">
+	<div class="footl"><img id="FmuserCard" class="twocode" width="100" height="100" src="https://www.fmuser.net/Templates/jzcbff/images/fmuser_QR_CODE.png" alt="" /></div>
+	<script type="text/javascript">
+		jQuery(function(){
+			var codeHTML='<div id="LargeFmuserCard" style="display:none;position:absolute;background-color:#fff;padding:10px;border:solid 25px #ebebeb;">';
+					codeHTML=codeHTML+'<img id="FmuserCard"  src="/Templates/jzcbff/images/fmuser_QR_CODE.png" alt="二维码" />';
+					codeHTML=codeHTML+'</div>';
+					
+    	$("#FmuserCard").mouseover(function(){
+					var x=$(this).offset().left+100;
+					var y=$(this).offset().top-330;
+					
+					$("body").append(codeHTML);
+					$("#LargeFmuserCard").css({"left":x+"px","top":y+"px","zIndex":1000}).show("slow");
+					
+				})
+				.mouseout(function(){
+						$("#LargeFmuserCard").hide("slow");
+						
+					});
+    });
+    </script>
+	<div class="footr">FMUSER Pemasok Satu Pintu Siaran FM / TV </div>
+	<div class="cl"></div>
+	<div class="footb">
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cdiv id='cnzz_stat_icon_1000039534'%3E%3C/div%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000039534%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38964441-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!--Start of Tawk.to Script--><script type="text/javascript">var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/5e0574187e39ea1242a1f094/default';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();</script><!--End of Tawk.to Script-->
+		<img src="https://www.fmuser.net/Templates/jzcbff/images/all_payMethod.jpg" alt="" />
+	</div>
+</div>
+<link rev=stylesheet href="https://www.fmuser.net/Images/qq/kf3/style.css" type=text/css rel=stylesheet>
+<div class="qust_contach"> <a href="javascript:void(0);" class="qst_close icon"> </a>
+<b>Hubungi Kami</b>
+  <ul>
+    <li style="border-top:none"><a class=kefu_Type_qq href="callto://tomleequan"><img border="0" src='https://www.fmuser.net/images/qq/kf3/skype.jpg' alt="Hubungi Kami" title="Hubungi Kami"></a></li>
+    <li style="border-top:none"><a class=kefu_Type_qq href="http://amos.alicdn.com/msg.aw?v=2&uid=cn220187916&site=enaliint&s=21&charset=utf-8"><img border="0" src='https://www.fmuser.net/images/qq/kf3/taobao.gif' alt="Hubungi Kami" title="Hubungi Kami"></a></li>
+    <li style="border-top:none"><a class=kefu_Type_qq href="http://wpa.qq.com/msgrd?v=3&uin=2771670881&amp;site=qq&menu=yes"><img border="0" src='https://www.fmuser.net/images/qq/kf3/qq.jpg' alt="Hubungi Kami" title="Hubungi Kami"></a></li>
+    <li id ="toTop" style="border-bottom:none; height:0px;overflow: hidden;cursor: pointer;"> <a href="javascript:void(0);" class="back_top icon"> </a> </li>
+  </ul>
+</div>
+<div class="qust_show" style="display:none;"> <a href="javascript:void(0);"> <span class="icon server"></span><br/><span>Obrolan</span><br/><span>Untuk</span><br/><span>Us</span><br/></a></div>
+<script language=JavaScript src="https://www.fmuser.net/Images/qq/kf3/contact.js"></script>
+
+
+<script src="https://www.fmuser.net/js/piaofu.js" language="JavaScript"></script><script src="https://www.fmuser.net/inc/AspCms_AdvJs.asp?type=pf" language="JavaScript"></script>
+<script src="https://www.fmuser.net/inc/AspCms_AdvJs.asp?type=dl" language="JavaScript"></script>
+<script src="https://www.fmuser.net/inc/AspCms_AdvJs.asp?type=tc" language="JavaScript"></script>
+<!----------cnzz------------->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_2884891'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D2884891' type='text/javascript'%3E%3C/script%3E"));</script>
+<script data-cfasync="false" src="https://tdns3.gtranslate.net/tdn-bin/queue.js"></script><!-- Yandex.Metrika counter for GTranslate --><script data-cfasync="false">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter36618640 = new Ya.Metrika({ id:36618640, clickmap:false, trackLinks:true, accurateTrackBounce:true, ut:"noindex" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/36618640?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript></body>
+</html>
+<!-- delivered by GTranslate v4.8.8 in 310ms visit https://gtranslate.io -->
